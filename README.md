@@ -4,6 +4,7 @@
 
 
 
+
 ## Dependencies
 
 1. Python3
@@ -29,32 +30,21 @@ Sample codes require these libraries. Please install them on your environment.
   
 - targeted attack on MNIST
   ```python
-  $ python attack.py -d mnist -e 0.3 -m cnn_1 -t
+  $ python attack.py -a PYY -d mnist -e 0.3 -m cnn_1 -t --start 0 --stop 10
   ```
   If you delete -t option, attack on untargeted.
 
 - targeted attack on CIFAR-10
   ```python
-  $ python attack.py -d cifar10 -e 0.05 -m cnn_2 -t
+  $ python attack.py -a PYY -d cifar10 -e 0.05 -m cnn_2 -t --start 0 --stop 10
   ```
   If you delete -t option, attack on untargeted.
 
-
-
-## Notice
-
-```python
-print('\nExcluding misclassification samples')
-(X_test, y_test) = exclude_miss(sess, env, X_test, y_test, 0, 10)
-evaluate(sess, env, X_test, y_test)
-```
-
-```exclude_miss()``` in attack.py excludes samples originally misclassified by trained model in ```0-9``` pages of ```X_test``` datasets. If you run with more data, increase the number of the part of ```(0, 10)``` by yourself.
-
+If you run with more data, increase the number of the part of ```--stop 10``` by yourself please.
 
 
 
 ## License
 
-Some of the codes including this source use [gongzhitaao/tensorflow-adversarial](https://github.com/gongzhitaao/tensorflow-adversarial). Thanks.
+Some of the codes including this source use [gongzhitaao/tensorflow-adversarial](https://github.com/gongzhitaao/tensorflow-adversarial).
 
